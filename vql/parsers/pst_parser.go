@@ -1,5 +1,5 @@
-//go:build !linux && !386
-// +build !linux,!386
+//go:build !arm && !mips
+// +build !arm,!mips
 
 package parsers
 
@@ -26,7 +26,6 @@ import (
 
 type PSTParserArgs struct {
 	Filename    *accessors.OSPath `vfilter:"required,field=filename,doc=The PST file to parse."`
-	FolderPath  string            `vfilter:"field=FolderPath,doc=The folder path to save the attachments from emails."`
 	Accessor    string            `vfilter:"optional,field=accessor,doc=The accessor to use"`
 	RawMessages bool              `vfilter:"optional,field=raw,doc=If set we emit the raw message object for all objects"`
 }
